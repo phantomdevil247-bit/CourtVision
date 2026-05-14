@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <title>CourtVision - NBA Live Tracker</title>
+    <link rel="stylesheet" href ="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <nav>
+        <h1>CourtVision</h1>
+        <p>NBA Live Performance Tracker</p>
+    </nav>
+
+    <div class="container">
+        <h2>Player Stats</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                <tr>
+                    <td>{{ player.first_name }} {{ player.last_name }}</td>
+                    <td>{{ player.team.full_name }}</td>
+                    <td>{{ player.position }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+</body>
+</html>
