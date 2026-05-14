@@ -1,0 +1,57 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e;
+    color: #ffffff;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #16213e;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #0f3460;
+}
+
+nav h1 {
+    font-size: 36px;
+    color: #e94560;
+    margin: 0;
+}
+
+nav p {
+    color: #a8a8b3;
+    margin: 5px 0 0 0;
+}
+
+/* Main container */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #16213e;
+    border-radius: 8px;
+}
+
+th {
+    background-color: #0f3460;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #0f3460;
+}
+
+tr:hover {
+    background-color:#0f3460;
+}
