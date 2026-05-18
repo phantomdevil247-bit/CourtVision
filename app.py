@@ -1,12 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request 
 import api_handler
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    players = api_handler.get_players()
-    return render_template('index.html', players=players)
+    search = request.args.get('search', '')
+    if search:
+        players = api_handler.search_players(search)
+    else:
+         players = api_handler.get_players()
+    return render_template('index.html', players=players, search=search)
 
 @app.route('/standings')
 def standings():

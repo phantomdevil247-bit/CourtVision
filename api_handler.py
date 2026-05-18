@@ -11,11 +11,20 @@ HEADERS = {
 
 def get_players():
     try:
-        response = requests.get(f"{BASE_URL}/players?per_page=25", headers=HEADERS)
+        response = requests.get(f"{BASE_URL}/players?per_page=100", headers=HEADERS)
         data = response.json()
         return data['data']
     except Exception as e:
         print(f"Error fetching players : {e}")
+        return []
+    
+def search_players(name):
+    try:
+        response = requests.get(f"{BASE_URL}players?search={name}&per_page=25, headers=HEADERS")
+        data = response.json()
+        return data['data']
+    except Exception as e:
+        print(f"Error searching players: {e}")
         return []
     
 def get_standings():
