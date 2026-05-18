@@ -17,9 +17,9 @@
     <div class="container">
         <h2>Player Stats</h2>
 
-    <form action="/" method="GET"></form>
+    <form action="/" method="GET">
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search player name..." onkeyup="searchPlayers()">
+            <input type="text" name="search" placeholder="Search player name..." value="{{ search }}">
             <button type="submit">Search</button>
         </div>
     </form>

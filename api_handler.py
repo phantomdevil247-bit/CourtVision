@@ -2,7 +2,7 @@ import requests
 
 # Base URL and API key
 BASE_URL = "https://api.balldontlie.io/v1/"
-API_KEY = "1de2bd8e-123a-4cfc-afe8-3e5aaed799de"
+API_KEY = "e2ab2e47-842d-4410-ab13-9b137909cd20"
 
 # Headers to send with every request
 HEADERS = {
@@ -11,7 +11,9 @@ HEADERS = {
 
 def get_players():
     try:
-        response = requests.get(f"{BASE_URL}/players?per_page=100", headers=HEADERS)
+        response = requests.get(f"{BASE_URL}players?per_page=100", headers=HEADERS)
+        print(f"Status code: {response.status_code}")
+        print(f"Response text: {response.text}")
         data = response.json()
         return data['data']
     except Exception as e:
@@ -20,7 +22,7 @@ def get_players():
     
 def search_players(name):
     try:
-        response = requests.get(f"{BASE_URL}players?search={name}&per_page=25, headers=HEADERS")
+        response = requests.get(f"{BASE_URL}players?search={name}&per_page=25", headers=HEADERS)
         data = response.json()
         return data['data']
     except Exception as e:
