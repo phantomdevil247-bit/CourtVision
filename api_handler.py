@@ -37,5 +37,13 @@ def get_standings():
     except Exception as e:
         print(f"Error fetching standings: {e}")
         return []
-    
+
+def get_player_stats(player_id):
+    try:
+        response = requests.get(f"{BASE_URL}season_averages?season=2024&player_id={player_id}", headers=HEADERS)
+        data = response.json()
+        return data['data']
+    except Exception as e:
+        print(f"Error fetching stats: {e}")
+        return []
     

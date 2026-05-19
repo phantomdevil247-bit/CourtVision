@@ -39,7 +39,7 @@
             <tbody>
                 {% for player in players %}
                 <tr>
-                    <td>{{ player.first_name }} {{ player.last_name }}</td>
+                    <td><a href="/player/{{ player.id }}">{{ player.first_name }} {{ player.last_name }}</a></td>
                     <td>{{ player.team.full_name }}</td>
                     <td>{{ player.position }}</td>
                     <td>{{ player.height }}</td>
