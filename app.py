@@ -19,8 +19,8 @@ def standings():
 
 @app.route('/player/<int:player_id>')
 def player_stats(player_id):
-    stats = api_handler.get_player_stats(player_id)
-    return render_template('player.html', stats=stats, player_id=player_id)
+    games = api_handler.get_player_games(player_id)
+    return render_template('player.html', games=games)
 
 if __name__ == '__main__':
     app.run(debug=True)

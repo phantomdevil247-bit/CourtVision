@@ -34,16 +34,24 @@ def get_standings():
         response = requests.get(f"{BASE_URL}/standings?season=2025",headers=HEADERS)
         data = response.json()
         return data['data']
+    
     except Exception as e:
         print(f"Error fetching standings: {e}")
         return []
 
-def get_player_stats(player_id):
+def get_player_games(player_id):
     try:
-        response = requests.get(f"{BASE_URL}season_averages?season=2024&player_id={player_id}", headers=HEADERS)
+        response = requests.get(
+            f"{BASE_URL}games",
+            params={
+                "seasons[]": 2024,
+                "player_ids[]": player_id,
+                "per_page": 5
+            },
+            headers=HEADERS
+        )
         data = response.json()
         return data['data']
     except Exception as e:
-        print(f"Error fetching stats: {e}")
+        print(f"Error fetching games: {e}")
         return []
-    
